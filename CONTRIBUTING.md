@@ -45,6 +45,11 @@ The project currently defines [`logging`](https://docs.python.org/3/library/logg
 * **ERROR:** An error that affects the specific part that is being interacted with
 * **CRITICAL:** An error that affects the whole application.
 
+### Work in Progress (WIP) PRs
+Github [has introduced a new PR feature](https://github.blog/2019-02-14-introducing-draft-pull-requests/) that allows the PR author to mark it as a WIP. This provides both a visual and functional indicator that the contents of the PR are in a draft state and not yet ready for formal review.
+
+This feature should be utilized in place of the traditional method of prepending `[WIP]` to the PR title.
+
 ## Footnotes
 
 This document was inspired by the [Glowstone contribution guidelines](https://github.com/GlowstoneMC/Glowstone/blob/dev/docs/CONTRIBUTING.md).
