@@ -19,9 +19,10 @@ Note that contributions may be rejected on the basis of a contributor failing to
 5. **Avoid frequent pushes to the main repository**. This goes for PRs opened against your fork as well. Our test build pipelines are triggered every time a push to the repository (or PR) is made. Try to batch your commits until you've finished working for that session, or you've reached a point where collaborators need your commits to continue their own work. This also provides you the opportunity to amend commits for minor changes rather than having to commit them on their own because you've already pushed.
     * This includes merging master into your branch. Try to leave merging from master for after your PR passes review; a maintainer will bring your PR up to date before merging. Exceptions to this include: resolving merge conflicts, needing something that was pushed to master for your branch, or something was pushed to master that could potentionally affect the functionality of what you're writing.
 6. **Don't fight the framework**. Every framework has its flaws, but the frameworks we've picked out have been carefully chosen for their particular merits. If you can avoid it, please resist reimplementing swathes of framework logic - the work has already been done for you!
-7. If someone is working on a pull request, **do not open your own pull request for the same task**. Instead, collaborate with the author(s) of the existing pull request. Communication is key, and there's no point in two separate implementations of the same thing.
+7. If someone is working on an issue or pull request, **do not open your own pull request for the same task**. Instead, collaborate with the author(s) of the existing pull request. Duplicate PRs opened without communicating with the other author(s) and/or PyDis staff will be closed. Communication is key, and there's no point in two separate implementations of the same thing.
     * One option is to fork the other contributor's repository and submit your changes to their branch with your own pull request. We suggest following these guidelines when interacting with their repository as well.
-8. **Work as a team** and collaborate whereever possible. Keep things friendly and help each other out - these are shared projects and nobody likes to have their feet trodden on.
+    * The author(s) of inactive PRs and claimed issues will be be pinged after a week of inactivity for an update. Continued inactivity may result in the issue being released back to the community and/or PR closure.
+8. **Work as a team** and collaborate wherever possible. Keep things friendly and help each other out - these are shared projects and nobody likes to have their feet trodden on.
 9. **Internal projects are internal**. As a contributor, you have access to information that the rest of the server does not. With this trust comes responsibility - do not release any information you have learned as a result of your contributor position. We are very strict about announcing things at specific times, and many staff members will not appreciate a disruption of the announcement schedule.
 
 Above all, the needs of our community should come before the wants of an individual. Work together, build solutions to problems and try to do so in a way that people can learn from easily. Abuse of our trust may result in the loss of your Contributor role, especially in relation to Rule 7.
@@ -35,6 +36,23 @@ All projects evolve over time, and this contribution guide is no different. This
 A working environment for the [PyDis site](https://github.com/python-discord/site) is required to develop the bot. Instructions for setting up environments for both the site and the bot can be found on the PyDis Wiki:
   * [Site](https://wiki.pythondiscord.com/wiki/contributing/project/site)
   * [Bot](https://wiki.pythondiscord.com/wiki/contributing/project/bot)
+
+### Type Hinting
+[PEP 484](https://www.python.org/dev/peps/pep-0484/) formally specifies type hints for Python functions, added to the Python Standard Library in version 3.5. Type hints are recognized by most modern code editing tools and provide useful insight into both the input and output types of a function, preventing the user from having to go through the codebase to determine these types. 
+
+For example:
+
+```py
+async def _check_n_entries(self, ctx: commands.Context, number_of_people_to_display: int) -> int:
+```
+
+Tells us that this discord<span></span>.py command accepts a `commands.Context` object and an `int`, and returns an `int`.
+
+Some libraries, including discord<span></span>.py's commands extension, can utilize these hints to implicitly cast input variables to the desired type. In the above example, `number_of_people_to_display` is automatically cast from `str` to `int`, preventing the programmer from having to perform the same typecasting in the function body itself.
+
+All function declarations should be type hinted in all code contributed to the PyDis organization.
+
+For more information, see *[PEP 483](https://www.python.org/dev/peps/pep-0483/) - The Theory of Type Hints* and Python's documentation for the [`typing`](https://docs.python.org/3/library/typing.html) module.
 
 ### Logging levels
 The project currently defines [`logging`](https://docs.python.org/3/library/logging.html) levels as follows:
