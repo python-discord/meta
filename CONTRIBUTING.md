@@ -1,4 +1,4 @@
-# Contributing to one of our projects
+# Contributing to one of Our Projects
 
 Our projects are open-source and are automatically deployed whenever commits are pushed to the `master` branch on each repository, so we've created a set of guidelines in order to keep everything clean and in working order.
 
@@ -24,11 +24,10 @@ Note that contributions may be rejected on the basis of a contributor failing to
     * The author(s) of inactive PRs and claimed issues will be be pinged after a week of inactivity for an update. Continued inactivity may result in the issue being released back to the community and/or PR closure.
 8. **Work as a team** and collaborate wherever possible. Keep things friendly and help each other out - these are shared projects and nobody likes to have their feet trodden on.
 9. **Internal projects are internal**. As a contributor, you have access to information that the rest of the server does not. With this trust comes responsibility - do not release any information you have learned as a result of your contributor position. We are very strict about announcing things at specific times, and many staff members will not appreciate a disruption of the announcement schedule.
-10. 
 
 Above all, the needs of our community should come before the wants of an individual. Work together, build solutions to problems and try to do so in a way that people can learn from easily. Abuse of our trust may result in the loss of your Contributor role, especially in relation to Rule 7.
 
-## Changes to this arrangement
+## Changes to this Arrangement
 
 All projects evolve over time, and this contribution guide is no different. This document is open to pull requests or changes by contributors. If you believe you have something valuable to add or change, please don't hesitate to do so in a PR.
 
@@ -83,7 +82,7 @@ def foo(bar: int, baz: dict=None) -> bool:
     """
 ```
 
-### Logging levels
+### Logging Levels
 The project currently defines [`logging`](https://docs.python.org/3/library/logging.html) levels as follows:
 * **TRACE:** Use this for tracing every step of a complex process. That way we can see which step of the process failed. Err on the side of verbose. **Note:** This is a PyDis-implemented logging level.
 * **DEBUG:** Someone is interacting with the application, and the application is behaving as expected.
