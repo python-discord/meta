@@ -24,6 +24,7 @@ Note that contributions may be rejected on the basis of a contributor failing to
     * The author(s) of inactive PRs and claimed issues will be be pinged after a week of inactivity for an update. Continued inactivity may result in the issue being released back to the community and/or PR closure.
 8. **Work as a team** and collaborate wherever possible. Keep things friendly and help each other out - these are shared projects and nobody likes to have their feet trodden on.
 9. **Internal projects are internal**. As a contributor, you have access to information that the rest of the server does not. With this trust comes responsibility - do not release any information you have learned as a result of your contributor position. We are very strict about announcing things at specific times, and many staff members will not appreciate a disruption of the announcement schedule.
+10. 
 
 Above all, the needs of our community should come before the wants of an individual. Work together, build solutions to problems and try to do so in a way that people can learn from easily. Abuse of our trust may result in the loss of your Contributor role, especially in relation to Rule 7.
 
@@ -43,16 +44,44 @@ A working environment for the [PyDis site](https://github.com/python-discord/sit
 For example:
 
 ```py
-async def _check_n_entries(self, ctx: commands.Context, number_of_people_to_display: int) -> int:
+def foo(input_1: int, input_2: dict) -> bool:
 ```
 
-Tells us that this discord<span></span>.py command accepts a `commands.Context` object and an `int`, and returns an `int`.
+Tells us that `foo` accepts an `int` and a `dict` and returns a `bool`.
 
-Some libraries, including discord<span></span>.py's commands extension, can utilize these hints to implicitly cast input variables to the desired type. In the above example, `number_of_people_to_display` is automatically cast from `str` to `int`, preventing the programmer from having to perform the same typecasting in the function body itself.
-
-All function declarations should be type hinted in all code contributed to the PyDis organization.
+All function declarations should be type hinted in code contributed to the PyDis organization.
 
 For more information, see *[PEP 483](https://www.python.org/dev/peps/pep-0483/) - The Theory of Type Hints* and Python's documentation for the [`typing`](https://docs.python.org/3/library/typing.html) module.
+
+### AutoDoc Formatting Directives
+Many documentation packages provide support for automatic documentation generation from the codebase's docstrings. These tools utilize special formatting directives to enable richer formatting in the generated documentation.
+
+For example:
+
+```py
+def foo(bar: int, baz: dict=None) -> bool:
+    """
+    Does some things with some stuff.
+
+    :param bar: Some input
+    :param baz: Optional, some other input
+
+    :return: Some boolean
+    """
+```
+
+Since PyDis does not utilize automatic documentation generation, use of this syntax should not be used in code contributed to the organization. Should the purpose and type of the input variables not be easily discernable from the variable name and type annotation, a prose explanation can be used. Explicit references to variables, functions, classes, etc. should be wrapped with backticks (`` ` ``).
+
+For example, the above docstring would become:
+
+```py
+def foo(bar: int, baz: dict=None) -> bool:
+    """
+    Does some things with some stuff.
+
+    This function takes an index, `bar` and checks for its presence in the database `baz`, passed as a dictionary. Returns `False` if `baz` is not passed.
+    """
+```
 
 ### Logging levels
 The project currently defines [`logging`](https://docs.python.org/3/library/logging.html) levels as follows:
