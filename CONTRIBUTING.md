@@ -27,7 +27,7 @@ Note that contributions may be rejected on the basis of a contributor failing to
 10. All static content, such as images or audio, **must be licensed for open public use**.
     * Static content must be hosted by a service designed to do so. Failing to do so is known as "leeching" and is frowned upon, as it generates extra bandwidth costs to the host without providing benefit. It would be best if appropriately licensed content is added to the repository itself so it can be served by PyDis' infrastructure.
 
-Above all, the needs of our community should come before the wants of an individual. Work together, build solutions to problems and try to do so in a way that people can learn from easily. Abuse of our trust may result in the loss of your Contributor role, especially in relation to Rule 7.
+Above all, the needs of our community should come before the wants of an individual. Work together, build solutions to problems and try to do so in a way that people can learn from easily. Abuse of our trust may result in the loss of your Contributor role, especially in relation to Rule 9.
 
 ## Changes to this Arrangement
 
