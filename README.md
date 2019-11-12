@@ -1,5 +1,5 @@
 # meta
 
-Issue tracker for suggestions and other questions relating to our 
-community - you won't find anything in this repository, head over 
-to [the issues](https://github.com/python-discord/meta/issues) instead.
+Search and add suggestions and or questions relating to our community in [Issues](https://github.com/python-discord/meta/issues).
+
+Browse our [bot tags](https://github.com/python-discord/meta/tree/master/tags) and feel free to create a PR if you'd like to contribute a new or edited tag.
