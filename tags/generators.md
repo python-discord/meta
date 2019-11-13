@@ -11,7 +11,7 @@ def my_map(function, old_list):
         new_list.append(function(element))
     return new_list
 
-for i in map(abs, [-1, -2, 3, -4]):
+for i in my_map(abs, [-1, -2, 3, -4]):
     print(i)
 # 1, 2, 3, 4
 ```
