@@ -5,7 +5,7 @@ letters = 'abc'
 numbers = [1, 2, 3]
 # zip(letters, numbers) --> [('a', 1), ('b', 2), ('c', 3)]
 for letter, number in zip(letters, numbers):
-print(letter, number)
+    print(letter, number)
 ```
 The `zip()` iterator is exhausted after the length of the shortest iterable is exceeded. If you would like to retain the other values, consider using [itertools.zip_longest](https://docs.python.org/3/library/itertools.html#itertools.zip_longest).
 
