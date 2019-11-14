@@ -3,13 +3,13 @@ Although most methods are tied to an _object instance_, it can sometimes be usef
 For example, you may be writing a class that takes some magic token (like an API key) as a constructor argument, but you sometimes read this token from a configuration file. You could make use of a `@classmethod` to create an alternate constructor for when you want to read from the configuration file.
 ```py
 class Bot:
-def __init__(self, token: str):
-self._token = token  
+    def __init__(self, token: str):
+        self._token = token  
 
-@classmethod
-def from_config(cls, config: dict) -> Bot:
-token = config['token']
-return cls(token)
+    @classmethod
+    def from_config(cls, config: dict) -> Bot:
+        token = config['token']
+        return cls(token)
 
 # now we can create the bot instance like this
 alternative_bot = Bot.from_config(default_config)
