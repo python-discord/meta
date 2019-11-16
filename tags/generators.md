@@ -19,8 +19,7 @@ However, there are two main issues with this approach:
 
 1. Initializing a list, appending to it and returning it is noisy boilerplate code.
 
-2. You will have to compute the result (which might be infinite) first, and this can take a lot of time.
-Creating a list and appending to it requires additional time and memory.
+2. You will have to compute the result (which might be infinite) first, and this can take a lot of time and memory.
 
 All of this can be solved with a _generator_:
 ```python
@@ -32,6 +31,9 @@ A generator can produce new elements on demand without storing them in a list.
 
 You can try to run the loop in the example, and it gives the same result.
 
-Note that generators are not a panacea. For instance, you may want to iterate multiple times over the result or access its elements by index. In this case, returning a list is more convenient.
+---
+Generators can provide a significant performance advantage. You don't need the extra memory to store the contents of a list, and you don't need to spend time on initializing the list and appending elements to it.
 
-You can also turn the output of any generator into a list: `list_of_numbers = list(my_map(abs, [-1, 2, -3])).
+Note that generators are not a panacea. For instance, you may want to iterate multiple times over the result or access its elements by index. In this case, returning a list can be more convenient.
+
+You can also turn the output of any generator into a list: `list_of_numbers = list(my_map(abs, [-1, 2, -3]))`.
