@@ -9,4 +9,4 @@ return n*n
 print(square(5)) # 5 is the argument
 ```
 
-Note that `5` is the argument passed to `square`, but `square(5)` in its entirety is the argument passed to `print`
+Note that `5` is the argument passed to `square`, but `square(5)` in its entirety is the argument passed to `print`.
