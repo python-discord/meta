@@ -17,4 +17,4 @@ They are also very useful for inverting the key value pairs of a dictionary that
 
 Also like list comprehensions, you can add a conditional to it in order to filter out items you don't want.
 
-For more information and examples, check [PEP 274](https://www.python.org/dev/peps/pep-0274/)
+For more information and examples, check [PEP 274](https://www.python.org/dev/peps/pep-0274/).
