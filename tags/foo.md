@@ -7,4 +7,5 @@ Python has its own metasyntactic variables, namely `spam`, and `eggs`. This is a
 
 More information:  
 • [History of foobar](https://en.wikipedia.org/wiki/Foobar)  
-• [Monty Python sketch](https://en.wikipedia.org/wiki/Spam_%28Monty_Python%29)  
+• [Monty Python sketch](https://en.wikipedia.org/wiki/Spam_(Monty_Python))
+  
