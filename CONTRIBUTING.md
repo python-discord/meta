@@ -96,6 +96,8 @@ The project currently defines [`logging`](https://docs.python.org/3/library/logg
 * **ERROR:** An error that affects the specific part that is being interacted with
 * **CRITICAL:** An error that affects the whole application.
 
+Ensure that log messages are succinct. Should you want to pass additional useful information that would otherwise make the log message overly verbose the `logging` module accepts an `extra` kwarg, which can be used to pass a dictionary. This is used to populate the `__dict__` of the `LogRecord` created for the logging event with user-defined attributes that can be accessed by a log handler. Additional information and caveats may be found [in Python's `logging` documentation](https://docs.python.org/3/library/logging.html#logging.Logger.debug).
+
 ### Work in Progress (WIP) PRs
 Github [has introduced a new PR feature](https://github.blog/2019-02-14-introducing-draft-pull-requests/) that allows the PR author to mark it as a WIP. This provides both a visual and functional indicator that the contents of the PR are in a draft state and not yet ready for formal review.
 
