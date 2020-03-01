@@ -36,9 +36,9 @@ All projects evolve over time, and this contribution guide is no different. This
 ##  Supplemental Information
 ### Developer Environment
 A working environment for the [PyDis site](https://github.com/python-discord/site) is required to develop the bot. Instructions for setting up environments for both the site and the bot can be found on the PyDis Wiki:
-  * [Site](https://wiki.pythondiscord.com/wiki/contributing/project/site)
-  * [Bot](https://wiki.pythondiscord.com/wiki/contributing/project/bot)
-  * [Seasonalbot](https://github.com/python-discord/seasonalbot/wiki#development-environment)
+  * [Site](https://pythondiscord.com/pages/contributing/site/)
+  * [Bot](https://pythondiscord.com/pages/contributing/bot/)
+  * [Seasonalbot](https://pythondiscord.com/pages/contributing/seasonalbot/)
 
 When pulling down changes from GitHub, **remember to sync your environment** using `pipenv sync --dev` to ensure you're using the most up-to-date versions the project's dependencies.
 
