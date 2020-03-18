@@ -88,13 +88,15 @@ def foo(bar: int, baz: dict=None) -> bool:
 ```
 
 ### Logging Levels
-The project currently defines [`logging`](https://docs.python.org/3/library/logging.html) levels as follows:
-* **TRACE:** Use this for tracing every step of a complex process. That way we can see which step of the process failed. Err on the side of verbose. **Note:** This is a PyDis-implemented logging level.
-* **DEBUG:** Someone is interacting with the application, and the application is behaving as expected.
-* **INFO:** Something completely ordinary happened. Like a cog loading during startup.
-* **WARNING:** Someone is interacting with the application in an unexpected way or the application is responding in an unexpected way, but without causing an error.
-* **ERROR:** An error that affects the specific part that is being interacted with
-* **CRITICAL:** An error that affects the whole application.
+The project currently defines [`logging`](https://docs.python.org/3/library/logging.html) levels as follows, from lowest to highest severity:
+* **TRACE:** These events should be used to provide a *verbose* trace of every step of a complex process. This is essentially the `logging` equivalent of sprinkling `print` statements throughout the code.
+  * **Note:** This is a PyDis-implemented logging level.
+* **DEBUG:** These events should add context to what's happening in a development setup to make it easier to follow what's going while working on a project. This is in the same vein as **TRACE** logging but at a much lower level of verbosity.
+* **INFO:** These events are normal and don't need direct attention but are worth keeping track of in production, like checking which cogs were loaded during a start-up.
+* **WARNING:** These events are out of the ordinary and should be fixed, but have not caused a failure.
+  * **NOTE:** Events at this logging level and higher should be reserved for events that require the attention of the DevOps team.
+* **ERROR:** These events have caused a failure in a specific part of the application and require urgent attention.
+* **CRITICAL:** These events have caused the whole application to fail and require immediate intervention.
 
 Ensure that log messages are succinct. Should you want to pass additional useful information that would otherwise make the log message overly verbose the `logging` module accepts an `extra` kwarg, which can be used to pass a dictionary. This is used to populate the `__dict__` of the `LogRecord` created for the logging event with user-defined attributes that can be accessed by a log handler. Additional information and caveats may be found [in Python's `logging` documentation](https://docs.python.org/3/library/logging.html#logging.Logger.debug).
 
