@@ -48,10 +48,14 @@ When pulling down changes from GitHub, **remember to sync your environment** usi
 For example:
 
 ```py
-def foo(input_1: int, input_2: dict) -> bool:
+import typing as t
+
+
+def foo(input_1: int, input_2: t.Dict[str, str]) -> bool:
+    ...
 ```
 
-Tells us that `foo` accepts an `int` and a `dict` and returns a `bool`.
+Tells us that `foo` accepts an `int` and a `dict`, with `str` keys and values, and returns a `bool`.
 
 All function declarations should be type hinted in code contributed to the PyDis organization.
 
@@ -63,15 +67,19 @@ Many documentation packages provide support for automatic documentation generati
 For example:
 
 ```py
-def foo(bar: int, baz: dict=None) -> bool:
+import typing as t
+
+
+def foo(bar: int, baz: t.Optional[t.Dict[str, str]] = None) -> bool:
     """
     Does some things with some stuff.
 
     :param bar: Some input
-    :param baz: Optional, some other input
+    :param baz: Optional, some dictionary with string keys and values
 
     :return: Some boolean
     """
+    ...
 ```
 
 Since PyDis does not utilize automatic documentation generation, use of this syntax should not be used in code contributed to the organization. Should the purpose and type of the input variables not be easily discernable from the variable name and type annotation, a prose explanation can be used. Explicit references to variables, functions, classes, etc. should be wrapped with backticks (`` ` ``).
