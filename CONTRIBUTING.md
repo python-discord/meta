@@ -12,7 +12,7 @@ Note that contributions may be rejected on the basis of a contributor failing to
     * If PRing from your own fork, **ensure that "Allow edits from maintainers" is checked**. This gives permission for maintainers to commit changes directly to your fork, speeding up the review process.
 3. **Adhere to the prevailing code style**, which we enforce using [`flake8`](http://flake8.pycqa.org/en/latest/index.html) and [`pre-commit`](https://pre-commit.com/).
     * Run `flake8` and `pre-commit` against your code **before** you push it. Your commit will be rejected by the build server if it fails to lint.
-    * [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) are a powerful tool that can be a daunting to set up. Fortunately, `pre-commit` abstracts this process away from you and is provided as a dev dependency for this project. Run `pipenv run precommit` when setting up the project and you'll never have to worry about breaking the build for linting errors.
+    * [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) are a powerful git feature for executing custom scripts when certain important git actions occur. The pre-commit hook is the first hook executed during the commit process and can be used to check the code being committed & abort the commit if issues, such as linting failures, are detected. While git hooks can seem daunting to configure, the `pre-commit` framework abstracts this process away from you and is provided as a dev dependency for this project. Run `pipenv run precommit` when setting up the project and you'll never have to worry about committing code that fails linting.
 4. **Make great commits**. A well structured git log is key to a project's maintainability; it efficiently provides insight into when and *why* things were done for future maintainers of the project.
     * Commits should be as narrow in scope as possible. Commits that span hundreds of lines across multiple unrelated functions and/or files are very hard for maintainers to follow. After about a week they'll probably be hard for you to follow too.
     * Avoid making minor commits for fixing typos or linting errors. Since you've already set up a `pre-commit` hook to run the linting pipeline before a commit, you shouldn't be committing linting issues anyway.
@@ -87,12 +87,16 @@ Since PyDis does not utilize automatic documentation generation, use of this syn
 For example, the above docstring would become:
 
 ```py
-def foo(bar: int, baz: dict=None) -> bool:
+import typing as t
+
+
+def foo(bar: int, baz: t.Optional[t.Dict[str, str]] = None) -> bool:
     """
     Does some things with some stuff.
 
     This function takes an index, `bar` and checks for its presence in the database `baz`, passed as a dictionary. Returns `False` if `baz` is not passed.
     """
+    ...
 ```
 
 ### Logging Levels
@@ -109,7 +113,7 @@ The project currently defines [`logging`](https://docs.python.org/3/library/logg
 Ensure that log messages are succinct. Should you want to pass additional useful information that would otherwise make the log message overly verbose the `logging` module accepts an `extra` kwarg, which can be used to pass a dictionary. This is used to populate the `__dict__` of the `LogRecord` created for the logging event with user-defined attributes that can be accessed by a log handler. Additional information and caveats may be found [in Python's `logging` documentation](https://docs.python.org/3/library/logging.html#logging.Logger.debug).
 
 ### Work in Progress (WIP) PRs
-Github [has introduced a new PR feature](https://github.blog/2019-02-14-introducing-draft-pull-requests/) that allows the PR author to mark it as a WIP. This provides both a visual and functional indicator that the contents of the PR are in a draft state and not yet ready for formal review.
+Github [provides a PR feature](https://github.blog/2019-02-14-introducing-draft-pull-requests/) that allows the PR author to mark it as a WIP. This provides both a visual and functional indicator that the contents of the PR are in a draft state and not yet ready for formal review.
 
 This feature should be utilized in place of the traditional method of prepending `[WIP]` to the PR title.
 
