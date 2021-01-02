@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Python Discord
+    url: https://discord.gg/python
+    about: Visit Python Discord and check out the community-meta channel to discuss things in this repository.
+  - name: Discussion board
+    url: https://github.com/python-discord/meta/discussions
+    about: If you have questions which are not described in the templates (such as questions) use GitHub Discussions.
