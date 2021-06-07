@@ -14,7 +14,7 @@ assignees: ''
 
 # Justification
 
-<!-- Why do you think this would be a useful feature? -->>
+<!-- Why do you think this would be a useful feature? -->
 
 # Implementation
 
