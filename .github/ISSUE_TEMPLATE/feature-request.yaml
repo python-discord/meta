@@ -1,0 +1,20 @@
+name: Feature Request
+description: If your issue does not match another template, use this template. This issue should describe an amendment to server operation, for project features open an issue on the relevant repository.
+labels: ["area: features"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a community feature!
+  - type: textarea
+    id: details
+    attributes:
+      label: What feature are you proposing?
+    validations:
+      required: true
+  - type: textarea
+    id: justification
+    attributes:
+      label: What is your justification for the proposed feature?
+    validations:
+      required: true

@@ -1,0 +1,48 @@
+name: Resource Request
+description: Request for a resource to be added to the Python Discord resource index.
+labels: ["area: resources"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new resource!
+  - type: dropdown
+    id: type
+    attributes:
+      label: Resource type 
+      options:
+      - Guide
+      - Book
+      - Video
+      - Interactive resource
+      - Community
+      - Course
+      - Podcast / Audio
+      - Tool
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Where can the resource be found?
+      description: For a web resource, please specify the home URL, additional URls can be specified below.
+      placeholder: e.g. https://pythondiscord.com/humans.txt
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Great! Now tell us a little more about the resource
+  - type: textarea
+    id: details
+    attributes:
+      label: What sort of content is in the resource? What areas of Python does it cover?
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Please give any additional information about the resource you think is worth including
+      description: Please list any information such as pricing of the resource or additional ways to access the resource
+    validations:
+      required: false

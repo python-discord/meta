@@ -1,0 +1,23 @@
+name: Tag Suggestion
+description: Suggest a new tag addition to the @Python bot
+labels: ["area: tags"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new tag!
+  - type: input
+    id: tag
+    attributes:
+      label: Tag Name
+      description: Name of the proposed tag
+      placeholder: e.g. f-strings, or-gotcha
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What kind of content should the tag include?
+      description: "This doesn't need to be a fully written tag, but just an indication of what content should be in the tag."
+    validations:
+      required: true

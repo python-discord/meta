@@ -1,0 +1,28 @@
+name: Policy Amendent
+description: Suggest an amendment to server moderation policy
+labels: ["area: policies"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a policy amendment!
+  - type: textarea
+    id: what
+    attributes:
+      label: What policy should be amended, and to what?
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Rule number
+      description: If this relates to a specific rule, please mention it, otherwise leave this field blank.
+      placeholder: e.g. 1
+    validations:
+      required: false
+  - type: textarea
+    id: why
+    attributes:
+      label: Why do you think this policy should be amended?
+    validations:
+      required: true

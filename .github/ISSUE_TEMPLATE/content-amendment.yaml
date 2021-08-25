@@ -1,0 +1,45 @@
+name: Content amendment or removal
+description: Propose an amendment or removal of Python Discord content
+labels: ["area: content amendment"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a content amendment!
+  - type: dropdown
+    id: amendment_type
+    attributes:
+      label: Amendment type
+      description: What type of amendment are you proposing?
+      options:
+        - Content Update
+        - Removal
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: content_type
+    attributes:
+      label: Content type
+      description: What type of content is the amendment about?
+      options:
+        - Tag
+        - Resource
+        - Other site content
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Please provide the location of the content
+      description: For a tag, give the tag name, otherwise give a URL to the content.
+      placeholder: "e.g. or-gotcha, https://pythondiscord.com/humans.txt"
+    validations:
+      required: true
+  - type: textarea
+    id: amendment_details
+    attributes:
+      label: What amendment do you think should be made to this content, and why?
+    validations:
+      required: true

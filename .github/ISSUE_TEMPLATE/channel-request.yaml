@@ -1,0 +1,42 @@
+name: Channel request
+description: Suggest a new channel for Python Discord
+labels: ["type: channel"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new channel!
+  - type: input
+    id: channel
+    attributes:
+      label: Channel Name
+      description: Example naming for the suggested command
+      placeholder: "e.g. #foo-bar"
+    validations:
+      required: true
+  - type: input
+    id: details
+    attributes:
+      label: What is the channel about?
+      description: Give a short summary of the channel topic
+      placeholder: "My channel to talk about different types of duck..."
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Channel type
+      description: What area of the server does the channel fit into?
+      options:
+        - Topical
+        - Discussion
+        - Announcement
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: justification
+    attributes:
+      label: What justification do you have for the new channel? What do you see it being used for?
+    validations:
+      required: true
