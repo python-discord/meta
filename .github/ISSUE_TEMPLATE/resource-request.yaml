@@ -25,11 +25,11 @@ body:
     id: pricing
     attributes:
       label: Pricing
-    options:
-    - Free
-    - Paid
-    - Subscription
-    - Combination
+      options:
+      - Free
+      - Paid
+      - Subscription
+      - Combination
     validations:
       required: true
   - type: input
