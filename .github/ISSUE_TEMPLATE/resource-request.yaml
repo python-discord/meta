@@ -21,6 +21,17 @@ body:
       - Tool
     validations:
       required: true
+  - type: dropdown
+    id: pricing
+    attributes:
+      label: Pricing
+    options:
+    - Free
+    - Paid
+    - Subscription
+    - Combination
+    validations:
+      required: true
   - type: input
     id: location
     attributes:
@@ -42,7 +53,7 @@ body:
   - type: textarea
     id: additional
     attributes:
-      label: Please give any additional information about the resource you think is worth including
-      description: Please list any information such as pricing of the resource or additional ways to access the resource
+      label: Please give any additional information about the resource you think is worth including, as well as any potential limitations
+      description: If a resource has any limitations or downsides, please share why you think it should still be included
     validations:
       required: false
